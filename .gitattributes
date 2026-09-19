@@ -1,0 +1,16 @@
+# Normalización de archivos de texto
+* text=auto
+
+# Código y documentación con finales de línea LF
+*.py text eol=lf
+*.ipynb text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.html text eol=lf
+
+# Archivos binarios
+*.xlsx binary
+*.joblib binary
+*.png binary
+*.jpg binary
+*.jpeg binary
