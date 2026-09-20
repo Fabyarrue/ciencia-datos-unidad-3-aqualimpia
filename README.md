@@ -84,7 +84,9 @@ El dashboard integra cinco vistas:
 - distribución de la DBO de salida;
 - evolución temporal de la eficiencia mediana.
 
-El archivo HTML incorpora Plotly, mantiene su interactividad sin conexión a internet y utiliza colores constantes para identificar las plantas en todos los paneles.
+![Dashboard exploratorio de AquaLimpia](resultados/P1_Figura_1_dashboard_exploratorio_aqualimpia.png)
+
+El archivo HTML incorpora Plotly, mantiene su interactividad sin conexión a internet y utiliza colores constantes para identificar las plantas en todos los paneles. Para utilizar las funciones interactivas desde GitHub, se debe descargar `resultados/dashboard_aqualimpia.html` y abrirlo localmente en un navegador.
 
 ### Reporte de Operaciones
 
@@ -117,4 +119,4 @@ Estas limitaciones no impiden describir la muestra, pero restringen las conclusi
 
 ## Estado
 
-El análisis principal, el dashboard, las funciones reutilizables, las preguntas de investigación y los reportes diferenciados se encuentran implementados y verificados. La documentación académica y la revisión final de la entrega continúan en desarrollo.
+El análisis principal, el dashboard, las funciones reutilizables, las preguntas de investigación y los reportes diferenciados se encuentran implementados y verificados. El proyecto se encuentra en revisión final previa a su integración en la rama principal.

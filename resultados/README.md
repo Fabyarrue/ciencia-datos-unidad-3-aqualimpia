@@ -5,6 +5,7 @@ Esta carpeta contiene las salidas generadas mediante la ejecución reproducible 
 ## Archivos generados
 
 - `dashboard_aqualimpia.html`: dashboard exploratorio interactivo con comparaciones operacionales y ambientales. El archivo incorpora Plotly y puede abrirse sin conexión a internet.
+- `P1_Figura_1_dashboard_exploratorio_aqualimpia.png`: vista estática del dashboard utilizada en el informe académico y en el README principal.
 - `reporte_operaciones.xlsx`: detalle destinado a Operaciones con fecha, planta, caudal, DBO de entrada y salida, eficiencia de remoción, energía de aireación y generación de lodos.
 - `reporte_gestion_ambiental.xlsx`: detalle destinado a Gestión Ambiental con fecha, planta, DBO de salida y cumplimiento registrado en el dataset.
 - `resumen_resultados.joblib`: objeto serializado con el periodo analizado, cantidad de registros, número de plantas y resumen comparativo por instalación.
