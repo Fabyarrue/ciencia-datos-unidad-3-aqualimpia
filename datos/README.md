@@ -12,11 +12,11 @@ Huella SHA-256 del archivo utilizado:
 
 `00A8F776684218246C7CF47D1CB62B13685674C9EC1DB14596BD557BB864EF14`
 
-El archivo original no debe modificarse. Las conversiones de tipos, variables derivadas y demás transformaciones se realizarán mediante código reproducible.
+El archivo original no debe modificarse. Las conversiones de tipos, variables derivadas y demás transformaciones se realizan mediante código reproducible.
 
 ## Características generales
 
 - 200 registros.
 - 10 variables.
-- Período registrado: 1 de julio al 28 de octubre de 2025.
+- Periodo registrado: 1 de julio al 28 de octubre de 2025.
 - Plantas incluidas: Centro, Norte y Sur.
