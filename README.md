@@ -62,7 +62,8 @@ El proceso analítico se desarrolló mediante las siguientes etapas:
 - `datos/dataset_set_A_aguas_residuales.xlsx`: dataset original proporcionado para la tarea.
 - `datos/README.md`: documentación del origen, integridad y tratamiento del dataset.
 - `resultados/dashboard_aqualimpia.html`: dashboard exploratorio interactivo.
-- `resultados/P1_Figura_1_dashboard_exploratorio_aqualimpia.png`: captura del dashboard utilizada en el informe académico.
+- `resultados/P3_Figura_2_documentacion_tecnica_readme_aqualimpia.png`: captura de los objetivos y las preguntas de investigación documentados en el README.
+- `resultados/P3_Figura_3_metodologia_resultados_readme_aqualimpia.png`: captura de la metodología y los resultados principales documentados en el README.
 - `resultados/reporte_operaciones.xlsx`: reporte detallado para Operaciones.
 - `resultados/reporte_gestion_ambiental.xlsx`: reporte detallado para Gestión Ambiental.
 - `resultados/resumen_resultados.joblib`: resumen serializado para reutilización programática.
