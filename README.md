@@ -8,9 +8,16 @@ Este proyecto desarrolla un análisis reproducible de los datos operacionales y 
 
 La entrega fue elaborada individualmente. Git y GitHub se utilizan para mantener trazabilidad, control de versiones, revisión de cambios y una estructura preparada para colaboración futura.
 
-## Objetivo
+## Objetivo general
 
 Describir y comparar el desempeño operacional y ambiental observado de las plantas de AquaLimpia S. A., mediante el análisis reproducible de las variables disponibles, con el propósito de identificar diferencias, asociaciones, patrones temporales y registros que requieran revisión.
+
+## Objetivos específicos
+
+- Comparar las plantas mediante la eficiencia de remoción de demanda biológica de oxígeno (DBO), la DBO de salida, la generación específica de lodos y el cumplimiento registrado.
+- Analizar la relación de la DBO de salida con la DBO de entrada y con el caudal procesado.
+- Examinar la asociación entre el caudal de entrada y la energía de aireación en cada planta.
+- Identificar patrones temporales, candidatos atípicos y limitaciones de calidad que deban considerarse antes de utilizar los resultados.
 
 ## Preguntas de investigación
 
@@ -24,6 +31,27 @@ Describir y comparar el desempeño operacional y ambiental observado de las plan
 No se desarrolla una solución predictiva orientada a anticipar riesgos regulatorios, porque `cumplimiento_norma` no documenta el criterio utilizado y cinco valores de DBO de salida aparecen asociados con ambas clasificaciones. A ello se suman la cobertura temporal limitada y la ausencia de variables operacionales y contextuales necesarias para sustentar una predicción confiable.
 
 El análisis no permite establecer causalidad ni verificar cumplimiento legal. Su alcance es descriptivo, exploratorio y comparativo, y busca organizar evidencia para orientar revisiones posteriores.
+
+## Metodología
+
+El proceso analítico se desarrolló mediante las siguientes etapas:
+
+1. Carga del dataset original y validación de su estructura.
+2. Revisión de tipos de datos, valores nulos, duplicados y condiciones básicas de consistencia.
+3. Construcción de la eficiencia de remoción de DBO y la generación específica de lodos.
+4. Comparación descriptiva de las plantas mediante medidas de tendencia central, dispersión y cumplimiento registrado.
+5. Análisis de las relaciones entre DBO de entrada y salida, caudal de entrada, energía de aireación y DBO de salida mediante correlaciones de Pearson y Spearman.
+6. Identificación de candidatos atípicos mediante el rango intercuartílico, sin eliminarlos automáticamente.
+7. Construcción del dashboard y generación de productos diferenciados para Operaciones y Gestión Ambiental.
+
+## Resultados principales
+
+- Se analizaron 200 registros correspondientes a tres plantas, sin valores nulos, filas duplicadas ni hallazgos en los controles básicos de consistencia.
+- La eficiencia promedio de remoción de DBO varió entre 86,65 % y 87,51 %, con diferencias inferiores a un punto porcentual entre las plantas.
+- El cumplimiento registrado se situó entre 16,90 % y 29,63 %, pero su interpretación está limitada por la falta de documentación del criterio de clasificación.
+- La relación entre DBO de entrada y salida presentó coeficientes de Spearman entre 0,719 y 0,820, con valores p inferiores a 0,001.
+- La relación entre caudal de entrada y energía de aireación mostró coeficientes de Pearson entre 0,832 y 0,873.
+- El análisis por planta identificó 15 casos candidatos atípicos distribuidos en 10 registros. Estos valores se conservaron porque el criterio estadístico no demuestra que correspondan a errores.
 
 ## Estructura del proyecto
 
