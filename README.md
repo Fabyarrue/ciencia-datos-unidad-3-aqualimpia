@@ -100,7 +100,7 @@ python .\codigo\ejecutar_analisis.py
 
 El script valida el dataset, utiliza las funciones externas y guarda los resultados mediante rutas relativas. El dashboard HTML se genera desde el notebook porque depende de las visualizaciones interactivas construidas durante el análisis.
 
-El flujo utiliza rutas relativas. El dataset debe permanecer en `datos/` con el nombre documentado. Los archivos de `resultados/` se regeneran durante la ejecución y no deben editarse manualmente.
+El flujo utiliza rutas relativas. El dataset debe permanecer en `datos/` con el nombre documentado. El dashboard HTML, los reportes Excel y el resumen Joblib ubicados en `resultados/` se regeneran durante la ejecución y no deben editarse manualmente. Las capturas PNG se obtienen y actualizan manualmente, según se documenta en `resultados/README.md`.
 
 ## Productos generados
 
