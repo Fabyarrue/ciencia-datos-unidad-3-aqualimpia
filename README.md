@@ -15,7 +15,7 @@ Describir y comparar el desempeño operacional y ambiental observado de las plan
 ## Objetivos específicos
 
 - Comparar las plantas mediante la eficiencia de remoción de demanda biológica de oxígeno (DBO), la DBO de salida, la generación específica de lodos y el cumplimiento registrado.
-- Analizar la relación de la DBO de salida con la DBO de entrada y con el caudal procesado.
+- Analizar la relación de la DBO de salida con la DBO de entrada y con el caudal de entrada.
 - Examinar la asociación entre el caudal de entrada y la energía de aireación en cada planta.
 - Identificar patrones temporales, candidatos atípicos y limitaciones de calidad que deban considerarse antes de utilizar los resultados.
 
