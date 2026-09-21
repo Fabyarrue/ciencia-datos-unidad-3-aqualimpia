@@ -157,4 +157,4 @@ Estas limitaciones no impiden describir la muestra, pero restringen las conclusi
 
 ## Estado
 
-El análisis principal, el dashboard, las funciones reutilizables, las preguntas de investigación y los reportes diferenciados se encuentran implementados y verificados. El proyecto se encuentra en revisión final previa a su integración en la rama principal.
+El análisis principal, el dashboard, las funciones reutilizables, las preguntas de investigación y los reportes diferenciados se encuentran implementados, verificados e integrados en la rama principal mediante un pull request.

@@ -4,11 +4,18 @@ from pathlib import Path
 
 import pandas as pd
 
-from funciones_analisis import (
-    guardar_reportes_excel,
-    guardar_resumen_joblib,
-    preparar_datos,
-)
+if __package__:
+    from .funciones_analisis import (
+        guardar_reportes_excel,
+        guardar_resumen_joblib,
+        preparar_datos,
+    )
+else:
+    from funciones_analisis import (
+        guardar_reportes_excel,
+        guardar_resumen_joblib,
+        preparar_datos,
+    )
 
 
 RAIZ_PROYECTO = Path(__file__).resolve().parents[1]

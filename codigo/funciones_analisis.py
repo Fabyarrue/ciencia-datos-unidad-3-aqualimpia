@@ -21,7 +21,10 @@ COLUMNAS_REQUERIDAS = {
 }
 
 
-def preparar_datos(df: pd.DataFrame) -> pd.DataFrame:
+def preparar_datos(
+    df: pd.DataFrame,
+    validar_consistencia: bool = True
+) -> pd.DataFrame:
     """
     Valida las columnas principales y crea variables derivadas.
 
@@ -29,6 +32,10 @@ def preparar_datos(df: pd.DataFrame) -> pd.DataFrame:
     ----------
     df:
         Dataset original de AquaLimpia.
+
+    validar_consistencia:
+        Indica si las mediciones incompatibles con el análisis deben
+        detener la preparación de los datos.
 
     Returns
     -------
@@ -60,33 +67,49 @@ def preparar_datos(df: pd.DataFrame) -> pd.DataFrame:
             f"Se encontraron {fechas_invalidas} fechas inválidas."
         )
 
-    if (datos["DBO_entrada_mg_L"] <= 0).any():
-        raise ValueError(
-            "La DBO de entrada debe ser mayor que cero."
-        )
+    if validar_consistencia:
+        if (datos["DBO_entrada_mg_L"] <= 0).any():
+            raise ValueError(
+                "La DBO de entrada debe ser mayor que cero."
+            )
 
-    if (datos["caudal_entrada_m3_d"] <= 0).any():
-        raise ValueError(
-            "El caudal de entrada debe ser mayor que cero."
-        )
+        if (datos["caudal_entrada_m3_d"] <= 0).any():
+            raise ValueError(
+                "El caudal de entrada debe ser mayor que cero."
+            )
+
+    dbo_entrada_valida = datos[
+        "DBO_entrada_mg_L"
+    ].where(
+        datos["DBO_entrada_mg_L"] > 0
+    )
+
+    caudal_valido = datos[
+        "caudal_entrada_m3_d"
+    ].where(
+        datos["caudal_entrada_m3_d"] > 0
+    )
 
     datos["eficiencia_remocion_DBO_pct"] = (
         (
             datos["DBO_entrada_mg_L"]
             - datos["DBO_salida_mg_L"]
         )
-        / datos["DBO_entrada_mg_L"]
+        / dbo_entrada_valida
         * 100
     )
 
     datos["lodos_especificos_kg_m3"] = (
         datos["lodos_generados_kg_d"]
-        / datos["caudal_entrada_m3_d"]
+        / caudal_valido
     )
 
-    if not datos[
-        "eficiencia_remocion_DBO_pct"
-    ].between(0, 100).all():
+    if (
+        validar_consistencia
+        and not datos[
+            "eficiencia_remocion_DBO_pct"
+        ].between(0, 100).all()
+    ):
         raise ValueError(
             "Se detectaron eficiencias fuera del rango "
             "de 0 % a 100 %."
@@ -177,7 +200,8 @@ def calcular_correlaciones_por_planta(
 def detectar_candidatos_atipicos_iqr(
     df: pd.DataFrame,
     columnas: list[str],
-    agrupar_por: str | None = "planta"
+    agrupar_por: str | None = "planta",
+    validar_consistencia: bool = True
 ) -> dict[str, pd.DataFrame]:
     """
     Detecta candidatos atípicos mediante el rango intercuartílico.
@@ -193,13 +217,20 @@ def detectar_candidatos_atipicos_iqr(
         Por defecto, los límites se calculan por planta. Si se
         utiliza None, el cálculo se realiza sobre todo el dataset.
 
+    validar_consistencia:
+        Indica si la preparación debe detenerse ante mediciones
+        incompatibles con el análisis.
+
     Returns
     -------
     dict[str, pd.DataFrame]
         Resumen de límites IQR y registros identificados como
         candidatos atípicos.
     """
-    datos = preparar_datos(df)
+    datos = preparar_datos(
+        df,
+        validar_consistencia=validar_consistencia
+    )
 
     columnas_revision = columnas.copy()
 
@@ -343,7 +374,10 @@ def auditar_calidad_datos(
         Tablas con el resumen general, valores nulos, controles de
         consistencia, límites IQR y candidatos atípicos.
     """
-    datos = preparar_datos(df)
+    datos = preparar_datos(
+        df,
+        validar_consistencia=False
+    )
 
     if columnas_numericas is None:
         columnas_numericas = [
@@ -358,7 +392,8 @@ def auditar_calidad_datos(
 
     resultado_atipicos = detectar_candidatos_atipicos_iqr(
         datos,
-        columnas_numericas
+        columnas_numericas,
+        validar_consistencia=False
     )
 
     cantidad_dias_periodo = (
