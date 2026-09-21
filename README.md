@@ -65,6 +65,7 @@ El proceso analítico se desarrolló mediante las siguientes etapas:
 - `resultados/P1_Figura_1_dashboard_exploratorio_aqualimpia.png`: captura del dashboard utilizada en el informe académico.
 - `resultados/P3_Figura_2_documentacion_tecnica_readme_aqualimpia.png`: captura de los objetivos y las preguntas de investigación documentados en el README.
 - `resultados/P3_Figura_3_metodologia_resultados_readme_aqualimpia.png`: captura de la metodología y los resultados principales documentados en el README.
+- `resultados/P6_Figura_4_repositorio_github_aqualimpia.png`: captura de la estructura del repositorio en GitHub utilizada en el informe académico.
 - `resultados/reporte_operaciones.xlsx`: reporte detallado para Operaciones.
 - `resultados/reporte_gestion_ambiental.xlsx`: reporte detallado para Gestión Ambiental.
 - `resultados/resumen_resultados.joblib`: resumen serializado para reutilización programática.
@@ -75,12 +76,19 @@ El proceso analítico se desarrolló mediante las siguientes etapas:
 
 - Python 3.14
 - Dependencias indicadas en `requirements.txt`
+- Google Chrome o Chromium, requerido por Kaleido para generar las imágenes estáticas del notebook
 - Entorno compatible con Jupyter Notebook
 
 Para instalar las dependencias:
 
 ```bash
 python -m pip install -r requirements.txt
+```
+
+Si Chrome o Chromium no está instalado, puede instalarse para Kaleido mediante:
+
+```powershell
+plotly_get_chrome
 ```
 
 ## Ejecución
